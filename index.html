@@ -128,25 +128,61 @@
       }
 
       /* FIXED: Hero section to take full viewport height */
+      /* Responsive full-screen hero that covers entire viewport on all devices */
       .hero-section {
-        height: 100vh;
+        position: relative;
         width: 100%;
-        margin-top: 0;
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-          url("IMG_20230814_182612.jpg") center/cover no-repeat fixed;
+        min-height: 100vh; /* at least full viewport height */
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: center; /* vertically center content */
+        align-items: center; /* horizontally center content */
         text-align: center;
         color: var(--white);
-        position: relative;
-        overflow: hidden;
-        background-attachment: fixed;
-        background-position: center center;
+
+        /* Background image settings */
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.35)
+          ),
+          url("IMG_20230814_182612.jpg");
+        background-position: center center; /* keep focal center */
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: cover; /* cover entire viewport (crop if needed) */
+
+        /* Avoid fixed on mobile (fixed causes problems on iOS/Android) */
+        background-attachment: scroll;
+        overflow: hidden;
       }
+
+      /* small tweak for very tall/small screens so content doesn't overlap */
+      @media (min-height: 900px) {
+        .hero-section {
+          padding-top: 40px;
+          padding-bottom: 40px;
+        }
+      }
+
+      /* Optional: for very small devices reduce logo size */
+      @media (max-width: 480px) {
+        .hero-logo {
+          height: 140px;
+          margin-top: 30px;
+        }
+        .hero-wordmark {
+          font-size: 1.8rem;
+        }
+      }
+
+      /* If you *really* want the full image visible without cropping on all screens,
+   use background-size: contain (but it will show letterbox — empty bars) */
+      /*
+.hero-section {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+*/
 
       /* FIXED: Mobile responsiveness for hero background */
       @media (max-width: 768px) {
@@ -174,7 +210,7 @@
         animation: zoomIn 0.8s ease-out, float 4s ease-in-out infinite;
         z-index: 2;
         position: relative;
-        margin-top: 70px;
+        margin-top: -15px;
       }
 
       .hero-wordmark {
@@ -192,6 +228,7 @@
       .hero-subtitle {
         font-size: calc(1rem + 0.6vw);
         font-weight: 300;
+        margin-top: 0px; /* এখানে মান দিয়ে নিচে নামাবেন */
         margin-bottom: 1.5rem;
         max-width: 800px;
         animation: fadeInUp 1s ease-out 0.5s both;
@@ -1937,7 +1974,7 @@
           setTimeout(function () {
             preloader.style.display = "none";
           }, 500);
-        }, 1500);
+        }, 500);
       });
 
       // Initialize AOS
