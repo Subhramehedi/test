@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Al-Ameen Mission | Santragachi Circle</title>
+
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="IMG_20230814_182612.jpg"
+      sizes="32x32"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/wp-content/uploads/2025/08/IMG-20250630-WA0014-180x180.jpg"
+    />
+
+    <!-- Arabic Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      /* Reset and ensure page loads at top */
+      html {
+        scroll-behavior: auto !important; /* Prevent auto smooth scroll on load */
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: #333; /* General text color for trust */
+      }
+
+      /* Trust-building color palette */
+      :root {
+        --primary-green: #2c5f2d; /* Deep green for growth/trust */
+        --secondary-blue: #007bff; /* A reliable blue */
+        --light-gray: #f8f9fa; /* Soft background */
+        --medium-gray: #e9ecef; /* Slightly darker background */
+        --dark-gray: #343a40; /* Text/footer color */
+        --white: #ffffff;
+      }
+
+      /* Preloader styles from index.html */
+      .preloader {
+        position: fixed;
+        inset: 0; /* top:0; right:0; bottom:0; left:0; */
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.6s ease, visibility 0.6s ease;
+        pointer-events: auto;
+        overflow: hidden;
+      }
+
+      /* যখন hide হবে */
+      .preloader.fade-out {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .preloader-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        max-width: 420px;
+        pointer-events: none;
+      }
+
+      .preloader-logo {
+        width: 120px;
+        height: 120px;
+        display: block;
+        margin: 0 auto;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+      }
+
+      .preloader-spinner {
+        width: 48px;
+        height: 48px;
+        margin: 18px auto 0;
+        border: 4px solid rgba(0, 0, 0, 0.08);
+        border-top: 4px solid #007495;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        pointer-events: none;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* FIXED: Hero section to take full viewport height */
+      .hero-section {
+        height: 100vh;
+        width: 100%;
+        margin-top: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("IMG_20230814_182612.jpg") center/cover no-repeat fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--white);
+        position: relative;
+        overflow: hidden;
+        background-attachment: fixed;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      /* FIXED: Mobile responsiveness for hero background */
+      @media (max-width: 768px) {
+        .hero-section {
+          background-attachment: scroll;
+          min-height: 100vh;
+        }
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.3));
+        animation: rotate 30s linear infinite;
+      }
+
+      .hero-logo {
+        height: 180px;
+        width: auto;
+        margin-bottom: 1.5rem;
+        animation: zoomIn 0.8s ease-out, float 4s ease-in-out infinite;
+        z-index: 2;
+        position: relative;
+      }
+
+      .hero-wordmark {
+        font-size: calc(2.5rem + 2vw);
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        /* Animation from index.html */
+        animation: fadeInUp 1s ease-out 0.3s both;
+        z-index: 2;
+        position: relative;
+      }
+
+      .hero-subtitle {
+        font-size: calc(1rem + 0.6vw);
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+        max-width: 800px;
+        animation: fadeInUp 1s ease-out 0.5s both;
+        z-index: 2;
+        position: relative;
+      }
+
+      /* FIXED: Better positioning for scroll indicator */
+      .scroll-indicator {
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: fadeInUp 1s ease-out 0.8s both,
+          bounce 2s ease-in-out infinite;
+        z-index: 2;
+      }
+
+      .scroll-indicator a {
+        color: var(--white);
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform 0.3s;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      .scroll-indicator a:hover {
+        transform: scale(1.1);
+      }
+
+      /* Header styles */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgb(255, 255, 255);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        transform: translateY(0);
+      }
+
+      .header.nav-up {
+        transform: translateY(-100%);
+      }
+
+      /* Brand Bar (Information for: Students, Faculty, Alumni) */
+      #brand-bar {
+        background: var(--primary-green);
+        padding: 0.8rem 0;
+        position: relative;
+        z-index: 1000;
+        animation: fadeInDown 0.6s ease-out;
+      }
+
+      #brand-bar .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .su-brand {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .su-brand:hover {
+        transform: scale(1.05);
+      }
+
+      .brand-logo {
+        height: 32px;
+        width: auto;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      #gateway {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .gateway-nav--label {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.875rem;
+      }
+
+      #menu-gateway-nav {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      #menu-gateway-nav a {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: all 0.3s ease;
+        position: relative;
+        padding: 5px 10px;
+      }
+
+      #menu-gateway-nav a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--white);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      #menu-gateway-nav a:hover::after {
+        width: 100%;
+      }
+
+      #menu-gateway-nav a:hover {
+        opacity: 1;
+        transform: translateY(-2px);
+      }
+
+      /* Main Header Container */
+      .header-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.4rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        background: transparent;
+        border-radius: 8px;
+        margin-top: 4px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-green);
+        text-decoration: none;
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 2rem;
+      }
+
+      .nav-menu a {
+        color: var(--dark-gray);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary-green);
+      }
+
+      .menu-dots {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .menu-dots span {
+        width: 25px;
+        height: 3px;
+        background: var(--dark-gray);
+        transition: 0.3s;
+      }
+
+      /* Mobile menu */
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        transition: right 0.3s ease;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 80px;
+        gap: 1rem;
+        overflow-y: auto;
+      }
+
+      .mobile-menu.active {
+        right: 0;
+      }
+
+      .mobile-menu-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: transparent;
+        border: none;
+        color: #333;
+        font-size: 2.5rem;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        z-index: 10000;
+      }
+
+      .mobile-menu-close:hover {
+        transform: rotate(90deg);
+      }
+
+      /* Updated Mobile Menu Grid */
+      .mobile-menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 12px;
+        padding: 15px;
+        width: 90%;
+        max-width: 500px;
+        margin-bottom: 10px;
+      }
+
+      .mobile-menu-grid.gateway-grid {
+        margin-top: 20px;
+        border-top: 1px solid var(--medium-gray);
+        padding-top: 20px;
+      }
+
+      .mobile-menu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 8px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--dark-gray);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mobile-menu-item:hover,
+      .mobile-menu-item:active {
+        background: var(--light-gray);
+        transform: scale(1.05);
+      }
+
+      .mobile-menu-item .menu-icon {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+        color: var(--primary-green);
+      }
+
+      .mobile-menu-item span {
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      @media (max-width: 768px) {
+        #gateway {
+          display: none;
+        }
+        .nav-menu {
+          display: none;
+        }
+
+        .menu-dots {
+          display: flex;
+        }
+
+        .hero-wordmark {
+          font-size: 2.2rem;
+        }
+
+        .header-container {
+          padding: 1rem;
+          justify-content: space-between;
+        }
+      }
+
+      /* Mission section and other content styles */
+      .panel {
+        padding: 4rem 0;
+        position: relative;
+        z-index: 1;
+      }
+
+      .theme--white {
+        background: var(--white);
+        color: var(--dark-gray);
+      }
+
+      .theme--fog {
+        background: var(--light-gray);
+        color: var(--dark-gray);
+      }
+
+      .theme--stone {
+        background: var(--dark-gray);
+        color: var(--white);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .panel header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .panel h2 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        color: var(--primary-green);
+      }
+
+      .panel header p {
+        font-size: 1.25rem;
+        color: #767676;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .mission-statement {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        text-align: center;
+        margin: 2rem 0;
+      }
+
+      .islamic-quote {
+        text-align: center;
+        margin: 3rem 0;
+        padding: 2rem;
+        background: var(--light-gray);
+        border-radius: 10px;
+        border-left: 4px solid var(--primary-green);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .islamic-quote::before {
+        content: '"';
+        position: absolute;
+        top: -20px;
+        left: 20px;
+        font-size: 100px;
+        color: var(--primary-green);
+        opacity: 0.1;
+      }
+
+      .islamic-quote:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(44, 95, 45, 0.2);
+      }
+
+      .quran-arabic {
+        font-family: "Amiri", serif;
+        font-size: 2rem;
+        color: var(--primary-green);
+        margin-bottom: 1rem;
+        direction: rtl;
+      }
+
+      .quran-translation {
+        font-style: italic;
+        color: #666;
+        font-size: 1.1rem;
+      }
+
+      /* Animation keyframes */
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0) translateX(-50%);
+        }
+        40% {
+          transform: translateY(-10px) translateX(-50%);
+        }
+        60% {
+          transform: translateY(-5px) translateX(-50%);
+        }
+      }
+
+      /* Additional content styles */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .highlight-card {
+        background: var(--white);
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin: 1rem 0;
+        transition: transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .highlight-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--primary-green), #1a3f1c);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 1;
+      }
+
+      .highlight-card:hover::before {
+        opacity: 0.9;
+      }
+
+      .highlight-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .highlight-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .highlight-card:hover img {
+        transform: scale(1.1);
+      }
+
+      .highlight-card-content {
+        padding: 1.5rem;
+        position: relative;
+        z-index: 2;
+        transition: all 0.4s ease;
+      }
+
+      .highlight-card:hover .highlight-card-content {
+        color: var(--white);
+      }
+
+      .highlight-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-green);
+        transition: color 0.4s ease;
+      }
+
+      .highlight-card:hover h3 {
+        color: var(--white);
+      }
+
+      /* Expandable content styles */
+      .expandable-content {
+        position: relative;
+      }
+
+      .expandable-text {
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        max-height: 100px;
+      }
+
+      .expandable-text.expanded {
+        max-height: 1000px;
+      }
+
+      .read-more-link {
+        color: var(--primary-green);
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .read-more-link:hover {
+        text-decoration: underline;
+      }
+
+      .show-less-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: var(--primary-green);
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none;
+        font-size: 0.9rem;
+      }
+
+      .show-less-btn.active {
+        display: block;
+      }
+
+      .btn-ripple {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        background: var(--primary-green);
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-ripple:hover {
+        background: #1a3f1c;
+        transform: translateY(-2px);
+      }
+
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0);
+        animation: ripple-effect 0.6s linear;
+        pointer-events: none;
+      }
+
+      @keyframes ripple-effect {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+
+      .center-cta {
+        text-align: center;
+        margin: 3rem 0;
+      }
+
+      /* Updated News Grid for Scrolling */
+      .news-scroll-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin: 2rem auto;
+        padding: 1rem 0;
+      }
+
+      .news-scroll-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .news-scroll-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+
+      .news-card {
+        flex: 0 0 auto;
+        width: 300px;
+        margin: 0 15px;
+        scroll-snap-align: center;
+        background: var(--white);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+
+      .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .news-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .news-card-content {
+        padding: 1.5rem;
+      }
+
+      .news-category {
+        color: var(--primary-green);
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+
+      .news-card h3 {
+        font-size: 1.25rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+      }
+
+      .news-card a {
+        color: var(--dark-gray);
+        text-decoration: none;
+      }
+
+      .news-card a:hover {
+        color: var(--primary-green);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+        text-align: center;
+      }
+
+      .stat-item {
+        padding: 2rem;
+        background: var(--light-gray);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .stat-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        background: var(--white);
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--primary-green);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-number[data-target] {
+        animation: countUp 2s ease-out;
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        color: #666;
+      }
+
+      /* Updated General Secretary Section */
+      .secretary-section {
+        position: relative;
+        padding: 5rem 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("background-blurred.jpg") center/cover no-repeat;
+        color: var(--white);
+      }
+
+      .secretary-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        text-align: center;
+      }
+
+      .secretary-profile {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid var(--white);
+        margin: 0 auto 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .secretary-quote {
+        font-size: 1.4rem;
+        font-style: italic;
+        margin-bottom: 2rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        line-height: 1.8;
+      }
+
+      .secretary-name {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .secretary-title {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 1.5rem;
+      }
+
+      .secretary-read-more {
+        color: var(--white);
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: opacity 0.3s;
+      }
+
+      .secretary-read-more:hover {
+        opacity: 0.8;
+        text-decoration: underline;
+      }
+
+      /* Responsive General Secretary for Mobile */
+      @media (max-width: 768px) {
+        .secretary-section {
+          padding: 3rem 0;
+        }
+
+        .secretary-profile {
+          width: 150px;
+          height: 150px;
+        }
+
+        .secretary-quote {
+          font-size: 1.1rem;
+        }
+      }
+
+      /* Fixed Photo Gallery */
+      .photo-gallery-section {
+        padding: 4rem 0;
+        background: var(--medium-gray);
+      }
+
+      .photo-gallery-section .container {
+        text-align: center;
+      }
+
+      .scroll-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin: 2rem auto;
+        padding: 1rem 0;
+      }
+
+      .scroll-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .scroll-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+
+      .scroll-item {
+        flex: 0 0 auto;
+        width: 160px;
+        height: 200px;
+        margin: 0 10px;
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: var(--white);
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Better mobile sizing */
+      @media (max-width: 768px) {
+        .scroll-item {
+          width: 140px;
+          height: 180px;
+          margin: 0 8px;
+        }
+
+        .scroll-item img {
+          width: 100px;
+          height: 100px;
+        }
+
+        .scroll-item span {
+          font-size: 0.85rem;
+        }
+      }
+
+      .scroll-item:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .scroll-item img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary-green);
+        margin-bottom: 10px;
+      }
+
+      .scroll-item span {
+        font-weight: 600;
+        color: var(--dark-gray);
+        font-size: 0.95rem;
+        text-align: center;
+        padding: 0 10px;
+      }
+
+      .scroll-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(44, 95, 45, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid var(--primary-green);
+      }
+
+      .dot.active {
+        background: var(--primary-green);
+        transform: scale(1.2);
+      }
+
+      .dot:hover {
+        background: var(--primary-green);
+        opacity: 0.8;
+      }
+
+      .social-logos {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .social-logos img.social-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .social-logos img.social-icon:hover {
+        transform: scale(1.2);
+      }
+
+      footer {
+        background: var(--dark-gray);
+        color: var(--white);
+        padding: 3rem 0 2rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 1rem;
+        color: var(--primary-green);
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section a {
+        color: #ccc;
+        text-decoration: none;
+        line-height: 2;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: var(--primary-green);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding: 2rem 0;
+        border-top: 1px solid #444;
+        margin-top: 2rem;
+        color: #999;
+      }
+      .highlight-card:hover .read-more-link {
+        color: white !important;
+      }
+
+      .highlight-card:hover .show-less-btn.active {
+        background: white !important;
+        color: black !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+      <div class="preloader-content">
+        <img
+          src="https://play-lh.googleusercontent.com/gufR1twVlU6_SzC-iIAD_8bLLf-XYVAwwwwJF-cphD32IX0GeHNLi4GrN42hRYDHg-A"
+          alt="Loading"
+          class="preloader-logo"
+        />
+        <div class="preloader-spinner"></div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="mainHeader">
+      <section id="brand-bar">
+        <div class="container">
+          <a href="#top" class="su-brand">
+            <img
+              src="https://play-lh.googleusercontent.com/gufR1twVlU6_SzC-iIAD_8bLLf-XYVAwwwwJF-cphD32IX0GeHNLi4GrN42hRYDHg-A"
+              alt="Mission Logo"
+              class="brand-logo"
+            />
+            Al-Ameen Mission
+          </a>
+
+          <!-- Three Dots Menu for Mobile -->
+          <button class="menu-dots" id="menuDots" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <!-- Desktop Gateway Navigation -->
+          <nav id="gateway" aria-label="Gateway navigation">
+            <div class="gateway-nav--label">Information for:</div>
+            <ul id="menu-gateway-nav">
+              <li><a href="#students" class="btn-ripple">Students</a></li>
+              <li>
+                <a href="#faculty-staff" class="btn-ripple">Faculty & Staff</a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com" target="_blank">Alumni</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <div class="header-container">
+        <nav class="nav-menu">
+          <a href="#mission">About</a>
+          <a href="#programs">Programs</a>
+          <a href="#admission">Admission</a>
+          <a href="#results">Results</a>
+          <a href="#hall-of-fame">Hall of Fame</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-menu-close" id="menuClose">×</button>
+      <div class="mobile-menu-grid">
+        <a href="#mission" class="mobile-menu-item">
+          <span class="menu-icon">📖</span>
+          <span>About</span>
+        </a>
+        <a href="#results" class="mobile-menu-item">
+          <span class="menu-icon">📊</span>
+          <span>Result</span>
+        </a>
+        <a href="#programs" class="mobile-menu-item">
+          <span class="menu-icon">📚</span>
+          <span>Programs</span>
+        </a>
+        <a href="#admission" class="mobile-menu-item">
+          <span class="menu-icon">📝</span>
+          <span>Admission</span>
+        </a>
+        <a href="#hall-of-fame" class="mobile-menu-item">
+          <span class="menu-icon">🏆</span>
+          <span>Hall of Fame</span>
+        </a>
+        <a href="#contact" class="mobile-menu-item">
+          <span class="menu-icon">📞</span>
+          <span>Contact</span>
+        </a>
+      </div>
+
+      <div class="mobile-menu-grid gateway-grid">
+        <a href="#students" class="mobile-menu-item">
+          <span class="menu-icon">👤</span>
+          <span>Students</span>
+        </a>
+        <a href="#faculty-staff" class="mobile-menu-item">
+          <span class="menu-icon">👥</span>
+          <span>Faculty</span>
+        </a>
+        <a
+          href="https://www.youtube.com"
+          target="_blank"
+          class="mobile-menu-item"
+        >
+          <span class="menu-icon">🎓</span>
+          <span>Alumni</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <img
+        src="https://play-lh.googleusercontent.com/gufR1twVlU6_SzC-iIAD_8bLLf-XYVAwwwwJF-cphD32IX0GeHNLi4GrN42hRYDHg-A"
+        alt="Mission Logo"
+        class="hero-logo"
+      />
+      <h1 class="hero-wordmark">Al-Ameen Mission</h1>
+      <p class="hero-subtitle">Santragachi Circle</p>
+      <div class="scroll-indicator">
+        <a href="#mission" id="explore-btn">
+          <span>Explore</span>
+          <span>↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Mission Section -->
+      <section id="mission" class="panel theme--white" data-aos="fade-up">
+        <div class="container">
+          <header>
+            <h2>A Mission Defined by Possibility</h2>
+          </header>
+
+          <div class="mission-statement">
+            <p>
+              At Al-Ameen Mission Santragachi Circle, we deliver quality
+              education with the best support for Class XI (Sc), XII (Sc), NEET
+              & JEE aspirants. Our values-driven Islamic environment, safe
+              hostel facilities, and expert faculty work together to shape your
+              bright future.
+            </p>
+          </div>
+
+          <div class="islamic-quote" data-aos="fade-up" data-aos-delay="200">
+            <p class="quran-arabic">وَقُل رَّبِّ زِدْنِي عِلْمًا</p>
+            <p class="quran-translation">
+              "And say, 'My Lord, increase me in knowledge.'" (Qur'an 20:114)
+            </p>
+          </div>
+
+          <div class="center-cta">
+            <a href="about-mission.html" class="btn-ripple"
+              >More About Al-Ameen Mission</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us Section -->
+      <section class="panel theme--fog" data-aos="fade-up">
+        <div class="container">
+          <header>
+            <h2>Why Choose Us?</h2>
+            <p>Excellence in education with Islamic values</p>
+          </header>
+
+          <div class="grid-container">
+            <div class="highlight-card" data-aos="zoom-in" data-aos-delay="100">
+              <img src="hostel.jpg" alt="Hostel" />
+              <div class="highlight-card-content">
+                <h3>🏡 Hostel Accommodation</h3>
+                <p>
+                  Clean, secure, disciplined campus life with all modern
+                  amenities for comfortable student living.
+                </p>
+              </div>
+            </div>
+
+            <div class="highlight-card" data-aos="zoom-in" data-aos-delay="200">
+              <img src="islamic-environment.jpg" alt="Islamic Environment" />
+              <div class="highlight-card-content">
+                <h3>🕌 Islamic Environment</h3>
+                <p>
+                  Prayer halls and daily moral education to nurture spiritual
+                  growth alongside academic excellence.
+                </p>
+              </div>
+            </div>
+
+            <div class="highlight-card" data-aos="zoom-in" data-aos-delay="300">
+              <img src="digital-classroom.jpg" alt="Digital Classrooms" />
+              <div class="highlight-card-content">
+                <h3>💻 Digital Classrooms</h3>
+                <p>
+                  Modern smart-class facilities for interactive and engaging
+                  learning experiences.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- General Secretary Section -->
+      <section class="secretary-section" data-aos="fade-up">
+        <div class="secretary-container">
+          <img
+            src="Screenshot 2025-09-11 024309.png"
+            alt="General Secretary"
+            class="secretary-profile"
+          />
+          <p class="secretary-quote">
+            "Education is not merely about acquiring knowledge; it's about
+            building character, nurturing faith, and preparing young minds to
+            serve humanity. At Al-Ameen Mission, we believe in holistic
+            development where academic excellence meets moral values, creating
+            leaders who will illuminate the world with their wisdom and
+            compassion."
+          </p>
+          <h3 class="secretary-name">Janab M. Nurul Islam</h3>
+          <p class="secretary-title">General Secretary, Al-Ameen Mission</p>
+          <a href="general-secretary.html" class="secretary-read-more"
+            >Read more</a
+          >
+        </div>
+      </section>
+
+      <!-- Latest News -->
+      <section class="panel theme--white" data-aos="fade-up">
+        <div class="container">
+          <header>
+            <h2>Latest News</h2>
+            <p>Stay updated with recent happenings and achievements</p>
+          </header>
+
+          <div class="news-scroll-container">
+            <div class="news-scroll-wrapper" id="newsScroll">
+              <article class="news-card">
+                <img src="news1.jpg" alt="News" />
+                <div class="news-card-content">
+                  <p class="news-category">Academic Achievement</p>
+                  <h3>Outstanding NEET Results 2025</h3>
+                  <div class="expandable-content">
+                    <div class="expandable-text" id="news1-text">
+                      <p>
+                        Our students achieve remarkable success in medical
+                        entrance examinations with 85% qualifying rate...
+                      </p>
+                    </div>
+                    <span
+                      class="read-more-link"
+                      onclick="toggleExpand('news1-text', this)"
+                      >Read more</span
+                    >
+                    <button
+                      class="show-less-btn"
+                      onclick="toggleExpand('news1-text', this.previousElementSibling)"
+                    >
+                      Show less
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <img src="news2.jpg" alt="News" />
+                <div class="news-card-content">
+                  <p class="news-category">Campus Event</p>
+                  <h3>Annual Science Fair Success</h3>
+                  <div class="expandable-content">
+                    <div class="expandable-text" id="news2-text">
+                      <p>
+                        Students showcase innovative projects at the annual
+                        science exhibition with over 50 projects...
+                      </p>
+                    </div>
+                    <span
+                      class="read-more-link"
+                      onclick="toggleExpand('news2-text', this)"
+                      >Read more</span
+                    >
+                    <button
+                      class="show-less-btn"
+                      onclick="toggleExpand('news2-text', this.previousElementSibling)"
+                    >
+                      Show less
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <img src="news3.jpg" alt="News" />
+                <div class="news-card-content">
+                  <p class="news-category">Achievement</p>
+                  <h3>JEE Main Top Performers</h3>
+                  <div class="expandable-content">
+                    <div class="expandable-text" id="news3-text">
+                      <p>
+                        Multiple students secure top ranks in engineering
+                        entrance examinations...
+                      </p>
+                    </div>
+                    <span
+                      class="read-more-link"
+                      onclick="toggleExpand('news3-text', this)"
+                      >Read more</span
+                    >
+                    <button
+                      class="show-less-btn"
+                      onclick="toggleExpand('news3-text', this.previousElementSibling)"
+                    >
+                      Show less
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <img src="news4.jpg" alt="News" />
+                <div class="news-card-content">
+                  <p class="news-category">Sports</p>
+                  <h3>Inter-School Cricket Championship</h3>
+                  <div class="expandable-content">
+                    <div class="expandable-text" id="news4-text">
+                      <p>Our cricket team wins the district championship...</p>
+                    </div>
+                    <span
+                      class="read-more-link"
+                      onclick="toggleExpand('news4-text', this)"
+                      >Read more</span
+                    >
+                    <button
+                      class="show-less-btn"
+                      onclick="toggleExpand('news4-text', this.previousElementSibling)"
+                    >
+                      Show less
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="center-cta">
+            <a href="more-news.html" class="btn-ripple">More News</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Academic Calendar Section (replacing Events) -->
+      <section class="panel theme--fog" data-aos="fade-up">
+        <div class="container">
+          <header>
+            <h2>Academic Calendar</h2>
+            <p>Important dates and upcoming events</p>
+          </header>
+
+          <div class="center-cta">
+            <a href="academic-calendar.html" class="btn-ripple"
+              >View Full Calendar</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistics -->
+      <section class="panel theme--white" data-aos="fade-up">
+        <div class="container">
+          <header>
+            <h2>Our Impact</h2>
+            <p>Numbers that reflect our commitment to excellence</p>
+          </header>
+
+          <div class="stats-grid">
+            <div class="stat-item" data-aos="flip-left" data-aos-delay="100">
+              <span class="stat-number" data-target="1200">0</span>
+              <span class="stat-label">Students Qualified NEET/JEE</span>
+            </div>
+            <div class="stat-item" data-aos="flip-left" data-aos-delay="200">
+              <span class="stat-number" data-target="95">0</span>
+              <span class="stat-label">Board Results Success Rate</span>
+            </div>
+            <div class="stat-item" data-aos="flip-left" data-aos-delay="300">
+              <span class="stat-number" data-target="100">0</span>
+              <span class="stat-label">Expert Faculty Members</span>
+            </div>
+            <div class="stat-item" data-aos="flip-left" data-aos-delay="400">
+              <span class="stat-number" data-target="35">0</span>
+              <span class="stat-label">Years of Excellence</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hall of Fame Section -->
+      <section
+        id="hall-of-fame"
+        class="panel photo-gallery-section"
+        data-aos="fade-up"
+      >
+        <div class="container">
+          <header>
+            <h2>Hall of Fame</h2>
+            <p>Celebrating our brightest stars and their achievements</p>
+          </header>
+          <div class="scroll-container" id="hallOfFameScroll">
+            <div class="scroll-wrapper">
+              <!-- Example items (replace with actual data) -->
+              <div class="scroll-item">
+                <img src="images.jpeg" alt="Student 1" />
+                <span>Ahmed Khan</span>
+              </div>
+              <div class="scroll-item">
+                <img src="student2.jpg" alt="Student 2" />
+                <span>Fatima Begum</span>
+              </div>
+              <div class="scroll-item">
+                <img src="student3.jpg" alt="Student 3" />
+                <span>Mohammed Ali</span>
+              </div>
+              <div class="scroll-item">
+                <img src="student4.jpg" alt="Student 4" />
+                <span>Aisha Rahman</span>
+              </div>
+              <div class="scroll-item">
+                <img src="student5.jpg" alt="Student 5" />
+                <span>Omar Farooq</span>
+              </div>
+              <div class="scroll-item">
+                <img src="student6.jpg" alt="Student 6" />
+                <span>Zainab Bibi</span>
+              </div>
+              <div class="scroll-item">
+                <img src="student7.jpg" alt="Student 7" />
+                <span>Imran Hossain</span>
+              </div>
+              <div class="scroll-item">
+                <img src="student8.jpg" alt="Student 8" />
+                <span>Sana Khatun</span>
+              </div>
+            </div>
+          </div>
+          <div class="scroll-dots" id="hallOfFameDots"></div>
+          <div class="center-cta">
+            <a href="/hall-of-fame-more" class="btn-ripple"
+              >More Hall of Fame</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Academic Programs -->
+      <section id="programs" class="panel theme--white" data-aos="fade-up">
+        <div class="container">
+          <header>
+            <h2>Academic Programs</h2>
+            <p>Comprehensive education programs for aspiring professionals</p>
+          </header>
+
+          <div class="grid-container">
+            <div class="highlight-card" data-aos="zoom-in" data-aos-delay="100">
+              <img src="science.jpg" alt="Science" />
+              <div class="highlight-card-content">
+                <h3>Class XI & XII Science</h3>
+                <div class="expandable-content">
+                  <div class="expandable-text" id="prog1-text">
+                    <p>
+                      Comprehensive science curriculum with focus on board
+                      examinations and competitive preparation. Our experienced
+                      faculty provides personalized attention to ensure every
+                      student excels in Physics, Chemistry, Biology/Mathematics
+                      with practical lab sessions, regular assessments, and
+                      doubt clearing classes.
+                    </p>
+                  </div>
+                  <span
+                    class="read-more-link"
+                    onclick="toggleExpand('prog1-text', this)"
+                    >Read more</span
+                  >
+                  <button
+                    class="show-less-btn"
+                    onclick="toggleExpand('prog1-text', this.previousElementSibling)"
+                  >
+                    Show less
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="highlight-card" data-aos="zoom-in" data-aos-delay="200">
+              <img src="neet.jpg" alt="NEET" />
+              <div class="highlight-card-content">
+                <h3>NEET Preparation</h3>
+                <div class="expandable-content">
+                  <div class="expandable-text" id="prog2-text">
+                    <p>
+                      Specialized coaching for medical entrance with experienced
+                      faculty and comprehensive study materials. Our NEET
+                      program includes intensive coaching, regular mock tests,
+                      performance analysis, one-on-one mentoring, and access to
+                      extensive question banks and study resources.
+                    </p>
+                  </div>
+                  <span
+                    class="read-more-link"
+                    onclick="toggleExpand('prog2-text', this)"
+                    >Read more</span
+                  >
+                  <button
+                    class="show-less-btn"
+                    onclick="toggleExpand('prog2-text', this.previousElementSibling)"
+                  >
+                    Show less
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="highlight-card" data-aos="zoom-in" data-aos-delay="300">
+              <img src="jee.jpg" alt="JEE" />
+              <div class="highlight-card-content">
+                <h3>JEE Preparation</h3>
+                <div class="expandable-content">
+                  <div class="expandable-text" id="prog3-text">
+                    <p>
+                      Expert guidance for engineering aspirants with focus on
+                      JEE Main and Advanced. Our comprehensive JEE program
+                      covers complete syllabus with conceptual clarity,
+                      problem-solving techniques, time management strategies,
+                      and extensive practice through chapter-wise tests and
+                      full-length mock exams.
+                    </p>
+                  </div>
+                  <span
+                    class="read-more-link"
+                    onclick="toggleExpand('prog3-text', this)"
+                    >Read more</span
+                  >
+                  <button
+                    class="show-less-btn"
+                    onclick="toggleExpand('prog3-text', this.previousElementSibling)"
+                  >
+                    Show less
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Admission -->
+      <section id="admission" class="panel theme--fog" data-aos="fade-up">
+        <div class="container">
+          <header>
+            <h2>Admission</h2>
+            <p>Join our community of excellence</p>
+          </header>
+
+          <div class="mission-statement">
+            <p>
+              We look for dedicated students who exhibit curiosity and
+              commitment to learning. Our admission process ensures we select
+              students who will thrive in our values-based educational
+              environment.
+            </p>
+
+            <div class="islamic-quote" style="margin-top: 2rem">
+              <p class="quran-arabic">
+                طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ
+              </p>
+              <p class="quran-translation">
+                "Seeking knowledge is an obligation upon every Muslim." (Sunan
+                Ibn Majah 224)
+              </p>
+            </div>
+          </div>
+
+          <div class="center-cta">
+            <a href="https://aamsystem.in/applications/" class="btn-ripple"
+              >Apply Now</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Results Section -->
+      <section id="results" class="panel theme--white">
+        <div class="container">
+          <header>
+            <h2>Results</h2>
+            <p>Check your examination results</p>
+          </header>
+          <div class="grid-container">
+            <a href="/bioct-result" class="btn-ripple">BIOCT Result</a>
+            <a href="/nanotest-result" class="btn-ripple">Nanotest Result</a>
+            <a href="/pre-pt-result" class="btn-ripple">Pre-PT Result</a>
+            <a href="/pt-result" class="btn-ripple">PT Result</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="panel theme--fog">
+        <div class="container">
+          <header>
+            <h2>Contact Us</h2>
+          </header>
+          <p style="text-align: center">
+            Get in touch with us for more information. <br />
+            📞 <a href="tel:+919876543210">+91 98765 43210</a><br />
+            📧
+            <a href="mailto:info@alaameenmission.org"
+              >info@alaameenmission.org</a
+            >
+          </p>
+          <div class="social-logos">
+            <a href="https://www.facebook.com/" target="_blank">
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg"
+                alt="Facebook"
+                class="social-icon"
+              />
+            </a>
+            <a href="https://x.com/" target="_blank">
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg"
+                alt="X"
+                class="social-icon"
+              />
+            </a>
+            <a href="https://youtube.com/" target="_blank">
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg"
+                alt="YouTube"
+                class="social-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#admission">Admission</a></li>
+            <li><a href="#results">Results</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="/student-portal">Student Portal</a></li>
+            <li><a href="/downloads">Downloads</a></li>
+            <li><a href="academic-calendar.html">Academic Calendar</a></li>
+            <li><a href="/library">Library</a></li>
+            <li>
+              <a href="https://www.youtube.com" target="_blank">Alumni</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Results</h3>
+          <ul>
+            <li><a href="/bioct-result">BIOCT Result</a></li>
+            <li><a href="/nanotest-result">Nanotest Result</a></li>
+            <li><a href="/pre-pt-result">Pre-PT Result</a></li>
+            <li><a href="/pt-result">PT Result</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="tel:+91-XXXXXXXXXX">Call Us</a></li>
+            <li><a href="mailto:info@aamsantragachi.org">Email</a></li>
+            <li><a href="/location">Location</a></li>
+            <li><a href="https://alameenmission.org">Main Website</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Al-Ameen Mission Santragachi Circle. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Force scroll to top on page load
+      window.addEventListener("beforeunload", function () {
+        window.scrollTo(0, 0);
+      });
+
+      if (history.scrollRestoration) {
+        history.scrollRestoration = "manual";
+      }
+
+      // Preloader
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          const preloader = document.getElementById("preloader");
+          preloader.classList.add("fade-out");
+          setTimeout(function () {
+            preloader.style.display = "none";
+          }, 500);
+        }, 1500);
+      });
+
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
+
+      // Header scroll behavior
+      let lastScroll = 0;
+      const header = document.getElementById("mainHeader");
+
+      window.addEventListener("scroll", function () {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+
+        if (
+          currentScroll > lastScroll &&
+          currentScroll > window.innerHeight / 2
+        ) {
+          header.classList.add("nav-up");
+        } else {
+          header.classList.remove("nav-up");
+        }
+
+        lastScroll = currentScroll;
+      });
+
+      // Mobile Menu Toggle
+      const menuDots = document.getElementById("menuDots");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuClose = document.getElementById("menuClose");
+
+      if (menuDots && mobileMenu && menuClose) {
+        menuDots.addEventListener("click", function () {
+          mobileMenu.classList.add("active");
+          document.body.style.overflow = "hidden";
+        });
+
+        menuClose.addEventListener("click", function () {
+          mobileMenu.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+
+        // Close mobile menu when clicking menu items
+        document.querySelectorAll(".mobile-menu-item").forEach((item) => {
+          item.addEventListener("click", function (e) {
+            const target = this.getAttribute("href");
+
+            // যদি external link হয় (http/https), normal link হিসেবে কাজ করবে
+            if (target.startsWith("http")) {
+              return; // preventDefault() হবে না
+            }
+
+            // না হলে scroll behavior follow করবে
+            e.preventDefault();
+            mobileMenu.classList.remove("active");
+            document.body.style.overflow = "";
+
+            setTimeout(function () {
+              const targetElement = document.querySelector(target);
+              if (targetElement) {
+                const headerHeight = header.offsetHeight;
+                const targetPosition =
+                  targetElement.offsetTop - headerHeight - 20;
+
+                window.scrollTo({
+                  top: targetPosition,
+                  behavior: "smooth",
+                });
+              }
+            }, 300);
+          });
+        });
+      }
+
+      // Explore button handler
+      document.addEventListener("DOMContentLoaded", function () {
+        const exploreBtn = document.getElementById("explore-btn");
+
+        if (exploreBtn) {
+          exploreBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const viewportHeight = window.innerHeight;
+
+            document.documentElement.style.scrollBehavior = "smooth";
+            window.scrollTo({
+              top: viewportHeight,
+              behavior: "smooth",
+            });
+
+            setTimeout(() => {
+              document.documentElement.style.scrollBehavior = "auto";
+            }, 1000);
+          });
+        }
+      });
+
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          if (this.id === "explore-btn") return;
+
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            const headerHeight = header?.offsetHeight || 80;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+
+            document.documentElement.style.scrollBehavior = "smooth";
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+
+            setTimeout(() => {
+              document.documentElement.style.scrollBehavior = "auto";
+            }, 1000);
+          }
+        });
+      });
+
+      // Toggle expand/collapse for content
+      function toggleExpand(textId, linkElement) {
+        const textElement = document.getElementById(textId);
+        const showLessBtn =
+          linkElement.parentElement.querySelector(".show-less-btn");
+
+        if (textElement.classList.contains("expanded")) {
+          textElement.classList.remove("expanded");
+          if (linkElement.classList.contains("read-more-link")) {
+            linkElement.textContent = "Read more";
+          }
+          showLessBtn.classList.remove("active");
+        } else {
+          textElement.classList.add("expanded");
+          if (linkElement.classList.contains("read-more-link")) {
+            linkElement.textContent = "";
+          }
+          showLessBtn.classList.add("active");
+        }
+      }
+
+      // Add ripple effect to buttons
+      document.querySelectorAll(".btn-ripple").forEach((button) => {
+        button.addEventListener("click", function (e) {
+          const ripple = document.createElement("span");
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+
+          ripple.style.width = ripple.style.height = size + "px";
+          ripple.style.left = x + "px";
+          ripple.style.top = y + "px";
+          ripple.classList.add("ripple");
+
+          this.appendChild(ripple);
+
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        });
+      });
+
+      // Counter Animation for Stats
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: "0px",
+      };
+
+      const counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = parseInt(counter.getAttribute("data-target"));
+            const increment = target / 100;
+            let current = 0;
+
+            const updateCounter = () => {
+              current += increment;
+              if (current < target) {
+                counter.textContent = Math.ceil(current);
+                requestAnimationFrame(updateCounter);
+              } else {
+                counter.textContent =
+                  target +
+                  (counter.parentElement.textContent.includes("%") ? "%" : "+");
+              }
+            };
+
+            updateCounter();
+            counterObserver.unobserve(counter);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all stat numbers
+      document
+        .querySelectorAll(".stat-number[data-target]")
+        .forEach((counter) => {
+          counterObserver.observe(counter);
+        });
+
+      // Fixed Photo Gallery Logic with Working Dots
+      function setupPhotoGallery(containerId, dotsId) {
+        const scrollContainer = document.getElementById(containerId);
+        if (!scrollContainer) return;
+
+        const scrollWrapper = scrollContainer.querySelector(".scroll-wrapper");
+        const scrollItems = scrollWrapper.querySelectorAll(".scroll-item");
+        const scrollDotsContainer = document.getElementById(dotsId);
+
+        if (!scrollWrapper || !scrollItems.length || !scrollDotsContainer) {
+          return;
+        }
+
+        const itemWidth = scrollItems[0].offsetWidth + 20;
+        const itemsPerPage = Math.floor(scrollWrapper.clientWidth / itemWidth);
+        const totalPages = Math.ceil(scrollItems.length / itemsPerPage);
+
+        // Clear existing dots
+        scrollDotsContainer.innerHTML = "";
+
+        // Create dots for pages
+        for (let i = 0; i < totalPages; i++) {
+          const dot = document.createElement("div");
+          dot.classList.add("dot");
+          if (i === 0) dot.classList.add("active");
+
+          dot.addEventListener("click", () => {
+            const scrollPosition = i * itemsPerPage * itemWidth;
+            scrollWrapper.scrollTo({
+              left: scrollPosition,
+              behavior: "smooth",
+            });
+            updateDots(i);
+          });
+
+          scrollDotsContainer.appendChild(dot);
+        }
+
+        const dots = scrollDotsContainer.querySelectorAll(".dot");
+
+        function updateDots(activeIndex) {
+          dots.forEach((dot, index) => {
+            if (index === activeIndex) {
+              dot.classList.add("active");
+            } else {
+              dot.classList.remove("active");
+            }
+          });
+        }
+
+        // Update dots on scroll
+        scrollWrapper.addEventListener("scroll", () => {
+          const currentPage = Math.round(
+            scrollWrapper.scrollLeft / (itemsPerPage * itemWidth)
+          );
+          updateDots(currentPage);
+        });
+
+        // Auto-scroll functionality
+        let autoScrollInterval;
+        let currentPage = 0;
+
+        function startAutoScroll() {
+          autoScrollInterval = setInterval(() => {
+            currentPage = (currentPage + 1) % totalPages;
+            const scrollPosition = currentPage * itemsPerPage * itemWidth;
+            scrollWrapper.scrollTo({
+              left: scrollPosition,
+              behavior: "smooth",
+            });
+            updateDots(currentPage);
+          }, 4000);
+        }
+
+        function stopAutoScroll() {
+          clearInterval(autoScrollInterval);
+        }
+
+        // Start auto-scroll
+        startAutoScroll();
+
+        // Pause on hover
+        scrollContainer.addEventListener("mouseenter", stopAutoScroll);
+        scrollContainer.addEventListener("mouseleave", startAutoScroll);
+
+        // Pause on touch
+        scrollContainer.addEventListener("touchstart", stopAutoScroll);
+        scrollContainer.addEventListener("touchend", () => {
+          setTimeout(startAutoScroll, 3000);
+        });
+      }
+
+      // Setup galleries
+      document.addEventListener("DOMContentLoaded", () => {
+        setupPhotoGallery("hallOfFameScroll", "hallOfFameDots");
+
+        // News scroll
+        const newsScroll = document.getElementById("newsScroll");
+        if (newsScroll) {
+          let newsScrollInterval = setInterval(() => {
+            if (
+              newsScroll.scrollLeft + newsScroll.clientWidth >=
+              newsScroll.scrollWidth
+            ) {
+              newsScroll.scrollTo({ left: 0, behavior: "smooth" });
+            } else {
+              newsScroll.scrollBy({ left: 315, behavior: "smooth" });
+            }
+          }, 3000);
+
+          newsScroll.addEventListener("mouseenter", () =>
+            clearInterval(newsScrollInterval)
+          );
+          newsScroll.addEventListener("mouseleave", () => {
+            newsScrollInterval = setInterval(() => {
+              if (
+                newsScroll.scrollLeft + newsScroll.clientWidth >=
+                newsScroll.scrollWidth
+              ) {
+                newsScroll.scrollTo({ left: 0, behavior: "smooth" });
+              } else {
+                newsScroll.scrollBy({ left: 315, behavior: "smooth" });
+              }
+            }, 3000);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
